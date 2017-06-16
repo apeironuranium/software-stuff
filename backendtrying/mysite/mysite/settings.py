@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+from django.utils import timezone
+import pytz
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -106,7 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC+03:00'
+#TIME_ZONE = 'UTC+03:00'
+timezone.activate(pytz.timezone("Europe/Moscow"))
+current_tz = timezone.get_current_timezone()
 
 USE_I18N = True
 
