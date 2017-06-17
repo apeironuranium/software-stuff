@@ -5,6 +5,7 @@ from django.utils import timezone
 
 
 class Recipe(models.Model):
+    title = models.CharField(default="", max_length=50)
     recipe_text = models.CharField(max_length=400)
     pub_date = models.DateTimeField('date published')
 
