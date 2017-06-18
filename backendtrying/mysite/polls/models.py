@@ -9,6 +9,12 @@ class Recipe(models.Model):
     recipe_text = models.CharField(max_length=400)
     pub_date = models.DateTimeField('date published')
 
+    recipe_lines = models.ManyToManyField(
+        'Food',
+        through='RecipeLine',
+        through_fields=('recipe', 'ingridient'),
+    )
+
     def __str__(self):
         return self.recipe_text
 
@@ -17,7 +23,6 @@ class Recipe(models.Model):
 
 
 class Food(models.Model):
-    recipe = models.ForeignKey(Recipe)
     food_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
@@ -25,9 +30,7 @@ class Food(models.Model):
         return self.food_text
 
 
-class Choice(models.Model):
-    food = models.ForeignKey(Food)
-    choice_text = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.choice_text
+class RecipeLine(models.Model):
+    recipe = models.ForeignKey(Recipe)
+    ingridient = models.ForeignKey(Food)
+    quantity = models.FloatField(default=0)

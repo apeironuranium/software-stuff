@@ -1,7 +1,10 @@
 from django.contrib import admin
-from polls.models import Recipe, Food, Choice
+from .models import Recipe, RecipeLine, Food
 admin.site.register(Food)
-admin.site.register(Choice)
+
+
+class RecipeLineInline(admin.StackedInline):
+    model = RecipeLine
 
 
 class RecipeAdmin(admin.ModelAdmin):
@@ -15,10 +18,11 @@ class RecipeAdmin(admin.ModelAdmin):
         (
             'Recipe itself',
             {
-                'fields': ['recipe_text'],
+                'fields': ['title', 'recipe_text'],
             },
         ),
     ]
-
+    list_filter = ['pub_date']
+    inlines = [RecipeLineInline]
 
 admin.site.register(Recipe, RecipeAdmin)
