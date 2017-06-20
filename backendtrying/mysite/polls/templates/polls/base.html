@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{% block title %}(no title){% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/styles.css' %}"/>
+    <meta name="description" content="Your favorite recipe service">
+    <meta charset="utf-8">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'polls:polls_index' %}">New search</a>
+            <a href="{% url 'polls:credits' %}">Credits</a>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <span>
+            <em>Polerol Foods project</em>
+            <br/>
+            <em>2017</em>
+        </span>
+    </footer>
+</body>
+</html>
