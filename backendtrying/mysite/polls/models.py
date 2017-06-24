@@ -4,8 +4,8 @@ from django.db import models
 from django.utils import timezone
 
 
-class Recipe(models.Model):
-    title = models.CharField(default="", max_length=50)
+class Recipe(models.Model): #модели в базе данных
+    title = models.CharField(default="", max_length=50) #столбцы в таблице в базе
     recipe_text = models.CharField(max_length=400)
     pub_date = models.DateTimeField('date published')
 

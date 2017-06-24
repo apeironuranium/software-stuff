@@ -8,3 +8,9 @@ class IndexView(generic.TemplateView):
 
 class CreditsView(generic.TemplateView):
     template_name = "polls/credits.html"
+
+class InputProductView(generic.TemplateView):
+    template_name = "polls/input_product.html"
+
+class YourRecipeView(generic.TemplateView):
+    template_name = "polls/your_recipe.html"
