@@ -5,11 +5,11 @@
 {% block content %}
 {% load static %}
     <div class="line">
-        <h1>What do you have?</h1>
+        <h1>Что у Вас есть?</h1>
     </div>
     <div id="content">
         <div id="header">
-            Input the list of products you have right now and want to cook at once:
+            Выберите из списка продукты, <br/>которые Вы хотите приготовить:
         </div>
         <div>
         <form action="{% url 'polls:your_recipe' %}" method='get'>
@@ -18,11 +18,13 @@
           <input type="submit" value="Submit" />
         </form>
         </div>
-        </div>
+    </div>
 
     <!-- Пока что активна просто ссылка на др. стр. для удобства ее верстки -->
 
-    <a href="{% url 'polls:your_recipe' %}"><div class="line"><em><strong>Let's cook</strong></em></div></a>
+    <!--<a href="{% url 'polls:your_recipe' %}">
+        <div class="line"><em><strong>...</strong></em></div>-->
+    <!--</a>-->
 
     <!-- <div class="line">
         <input type="submit"
@@ -42,5 +44,4 @@
                 + когда наприсуется красивая кнопка, ее можно будет тут прописать:
                 type="image" src="URL"
                 -->
-    </div>
 {% endblock %}
