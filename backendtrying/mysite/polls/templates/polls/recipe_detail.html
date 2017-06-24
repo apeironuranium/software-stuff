@@ -1,0 +1,29 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}{{ object.title }} — Taste'O'Clock{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="line">
+    <h1>Recipes available according to your wealth</h1>
+</div>
+<div id="content">
+    <div id="header">
+        {{ object.title }}
+    </div>
+    <div>
+        <h4>Ингридиенты</h4>
+        <ul>
+        {% for line in recipe_lines %}
+            <li>{{ line.ingridient }} {{ line.quantity }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h4>Способ приготовления</h4>
+        {{ object.recipe_text }}
+    </div>
+</div>
+    <div class="line"><em><strong>...</strong></em></div>
+
+{% endblock %}
