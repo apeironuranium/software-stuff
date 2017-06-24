@@ -46,10 +46,16 @@ h3 {
 }
 
 p {
-    width: 50%;
-    padding: 15px;
-    float: right;
+    padding-top: 15px;
 }
+
+/*@media (min-width: 600px) {
+    .column {
+        display: inline-block;
+        width: 300px;
+        text-align: center;
+    }
+}*/
 
 #lera {
     float: left;
@@ -60,5 +66,9 @@ p {
 }
 
 #github {
-    clesr: both;
+    clear: both;
+}
+
+footer {
+    float: bottom;
 }
