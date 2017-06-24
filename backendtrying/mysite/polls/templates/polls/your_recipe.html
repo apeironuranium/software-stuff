@@ -12,7 +12,13 @@
 
     </div>
     <div>
-
+    <ul>
+    {% for res in food_ids %}
+        <li>
+            <a href="{% url 'polls:recipe_detail' res.id %}">{{ res.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
     </div>
     <div>
 
