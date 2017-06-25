@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e08b2e6d-5aa0-46e5-b7fa-98221a7cde3d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/db.sqlite3" afterPath="$PROJECT_DIR$/backendtrying/mysite/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/static/polls/styles.css" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/static/polls/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/base.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/credits.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/credits.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/index.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/input_product.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/input_product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/recipe_detail.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/recipe_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/your_recipe.html" afterPath="$PROJECT_DIR$/backendtrying/mysite/polls/templates/polls/your_recipe.html" />
-    </list>
+    <list default="true" id="e08b2e6d-5aa0-46e5-b7fa-98221a7cde3d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
