@@ -5,45 +5,70 @@
 {% block content %}
 {% load static %}
 <div class="line">
-    <h1>Project credits</h1>
+    <h1>Авторы</h1>
 </div>
 <div id="content">
     <div id="header">
-        Heroes of our time
+        Герои нашего времени
     </div>
     <div>
         <div id="lera">
             <div>
-            <h3>Lera</h3>
-            <p>Backend magician</p>
+            <h3>Лера</h3>
+            <p>Back-end<br/>шаман</p>
+            </div>
+            <div>
+                <!--<a href="mailto:lera.leroi@gmail.com" target="_blank">
+                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+                </a>-->
+                <a href="https://t.me/" target="_blank">
+                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
+                </a>
+            </div>
         </div>
-        <div>
-            <a href="mailto:lera.leroi@gmail.com" target="_blank">
-                <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
-            </a>
-            <a href="http://t.me/" target="_blank">
-                <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
-            </a>
+        <div class="column" id="polina">
+            <div>
+                <h3>Полина</h3>
+                <p>Front-end<br/>друид</p>
+            </div>
+            <div>
+                <!--<a href="mailto:ponchitaz@yahoo.com" target="_blank">
+                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+                </a>-->
+                <a href="https://t.me/ponchitaz" target="_blank">
+                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
+                </a>
+            </div>
         </div>
+        <div class="column" id="seva">
+            <div>
+            <h3>Сева</h3>
+                <p>DevOps</br/>чернокнижник</p>
+            </div>
+            <div>
+                <!-- <a href="" target="_blank">
+                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+                </a>-->
+                <a href="https://t.me/aleister_atreides" target="_blank">
+                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
+                </a>
+            </div>
         </div>
+<<<<<<< HEAD
         <div id="polina">
             <h3>Polina</h3>
             <p>Frontend witch</p>
             <a href="mailto:ponchitaz@yahoo.com" target="_blank">
                 <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+=======
+        <div id="github">
+            <a href="https://github.com/apeironuranium/Your-food---our-recipe" target="_blank">
+                <img src="{% static 'polls/github-desktop-icon.png' %}" width="100px" alt="GitHub"/>
+>>>>>>> master
             </a>
-            <a href="http://t.me/ponchitaz" target="_blank">
-                <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
-            </a>
-
         </div>
-    <div id="github">
-        <a href="https://github.com/apeironuranium/Your-food---our-recipe" target="_blank">
-            <img src="{% static 'polls/github-pic.png' %}" width="100px" alt="GitHub"/>
-        </a>
-    </div>
     </div>
 </div>
-<a href="{% url 'polls:polls_index' %}"><div class="line"><em><strong>Home</strong></em></div></a>
+<a href="{% url 'polls:polls_index' %}"><div class="line"><em><strong>На главную</strong></em></div></a>
 
 {% endblock %}

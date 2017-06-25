@@ -22,6 +22,7 @@ class RecipeAdmin(admin.ModelAdmin):
             },
         ),
     ]
+    list_display = ("title",)
     list_filter = ['pub_date']
     inlines = [RecipeLineInline]
 

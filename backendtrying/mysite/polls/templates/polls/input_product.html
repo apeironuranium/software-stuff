@@ -5,55 +5,26 @@
 {% block content %}
 {% load static %}
     <div class="line">
-        <h1>What do you have?</h1>
+        <h1>Что у Вас есть?</h1>
     </div>
     <div id="content">
         <div id="header">
-            Input the list of products you have right now and want to cook at once:
+            Выберите из списка продукты, <br/>которые Вы хотите приготовить:
         </div>
         <div>
-            <form id="products">
-                <input type="text"
-                       autocomplete="on"
-                       list="product_db"
-                       maxlength="20"
-                       placeholder="Choose from the list"
-                       name="product | ingredient | food"
-                       pattern="^[A-Za-zА-Яа-яЁё\s]{2,}+$"
-                       autofocus />
-
-                <!-- name - вероятно, стоит назвать как столбец в БД,
-                в котором перечислены продукты?
-                -->
-
-                <datalist id="product_db">
-
-                    <!-- Вот тут надо как-то подключить БД,
-                    чтобы выпадал список продуктов, которые туда забиты
-                    и юзер не запорол всю тему, вводя отсутствующие продукты или
-                    делая ошибки в словах или вводя продукты на свой лад
-                    (т.к. "ice-cream" != "isecream")
-
-                    + еще проблемс:
-                        Note: The datalist tag is not supported in
-                        Internet Explorer 9 and earlier versions,
-                        or in Safari.
-                    -->
-
-                </datalist>
-                <div>
-                    <a href="">
-                        <input type="button"
-                               value="Add more" />
-                    </a>
-                </div>
-            </form>
+        <form action="{% url 'polls:your_recipe' %}" method='get'>
+          {% csrf_token %}
+          {{ product_form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
         </div>
     </div>
 
     <!-- Пока что активна просто ссылка на др. стр. для удобства ее верстки -->
 
-    <a href="{% url 'polls:your_recipe' %}"><div class="line"><em><strong>Let's cook</strong></em></div></a>
+    <!--<a href="{% url 'polls:your_recipe' %}">
+        <div class="line"><em><strong>...</strong></em></div>-->
+    <!--</a>-->
 
     <!-- <div class="line">
         <input type="submit"
@@ -73,5 +44,4 @@
                 + когда наприсуется красивая кнопка, ее можно будет тут прописать:
                 type="image" src="URL"
                 -->
-    </div>
 {% endblock %}

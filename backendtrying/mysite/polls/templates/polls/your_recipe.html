@@ -5,14 +5,20 @@
 {% block content %}
 {% load static %}
 <div class="line">
-    <h1>Recipes available according to your wealth</h1>
+    <h1>Доступные рецепты</h1>
 </div>
 <div id="content">
     <div id="header">
 
     </div>
-    <div>
-
+    <div class="recipe-description">
+    <ul>
+    {% for res in food_ids %}
+        <li>
+            <a href="{% url 'polls:recipe_detail' res.id %}">{{ res.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
     </div>
     <div>
 
