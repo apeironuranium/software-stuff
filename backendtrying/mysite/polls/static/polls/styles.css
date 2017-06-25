@@ -5,90 +5,71 @@ body {
     font-family: sans-serif;
     text-align: center;
     padding: 15px;
+    width: auto;
+    -moz-transform-origin: center 0 0;
+    -webkit-transform-origin: center 0 0;
+    height: 100vh;
 }
-
 nav {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
 }
-
 a {
     text-decoration: none;
-    color: cornsilk;
+    color: ghostwhite;
 }
-
+form {
+    color: #122b40;
+}
+label {
+    color: ghostwhite;
+}
+input {
+    background-color: transparent;
+    color: ghostwhite;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+}
 h1 {
     color: ghostwhite;
     margin: 5px;
 }
-
 h3 {
     margin: 5px;
 }
-
 .line {
-    /*background-color: #A468D5;*/
     padding: 5px;
     text-align: center;
 }
-
 #content {
-    width: 600px;
-    height: 400px;
+    width: auto;
+    height: auto;
     margin: auto;
     padding: 10px;
     font-size: 20px;
     overflow: auto;
     position: relative;
+    clear: left;
 }
-
 #header {
     padding: 10px;
     font-style: italic;
     font-weight: 600;
 }
-
 p {
     padding-top: 15px;
     margin: 5px;
 }
-
 .recipe-description {
     text-align: left;
 }
-
-/*@media (min-width: 600px) {
-    .column {
-        display: inline-block;
-        width: 300px;
-        text-align: center;
-    }
-}*/
-
-.column {
-    width: 180px;
-    display: inline-block;
-}
-
-#lera {
-    float: left;
-}
-
-#polina {
-
-}
-
-#seva {
-    float: right;
-}
-
 #github {
     margin-top: 45px;
     clear: both;
     text-align: center;
 }
+.navbar-fixed-bottom {
 
-footer {
-    float: bottom;
 }

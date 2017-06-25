@@ -4,71 +4,62 @@
 
 {% block content %}
 {% load static %}
-<div class="line">
-    <h1>Авторы</h1>
-</div>
-<div id="content">
-    <div id="header">
-        Герои нашего времени
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-xs-12 line">
+            <h1>Авторы</h1>
+        </div>
     </div>
-    <div>
-        <div id="lera">
-            <div>
+    <div class="row-fluid">
+        <div class="col-xs-12" id="header">
+            Герои нашего времени
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-sm-4 col-xs-12">
             <h3>Лера</h3>
             <p>Back-end<br/>шаман</p>
-            </div>
-            <div>
-                <!--<a href="mailto:lera.leroi@gmail.com" target="_blank">
-                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
-                </a>-->
-                <a href="https://t.me/" target="_blank">
-                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
-                </a>
-            </div>
-        </div>
-        <div class="column" id="polina">
-            <div>
-                <h3>Полина</h3>
-                <p>Front-end<br/>друид</p>
-            </div>
-            <div>
-                <!--<a href="mailto:ponchitaz@yahoo.com" target="_blank">
-                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
-                </a>-->
-                <a href="https://t.me/ponchitaz" target="_blank">
-                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
-                </a>
-            </div>
-        </div>
-        <div class="column" id="seva">
-            <div>
-            <h3>Сева</h3>
-                <p>DevOps</br/>чернокнижник</p>
-            </div>
-            <div>
-                <!-- <a href="" target="_blank">
-                    <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
-                </a>-->
-                <a href="https://t.me/aleister_atreides" target="_blank">
-                    <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
-                </a>
-            </div>
-        </div>
-<<<<<<< HEAD
-        <div id="polina">
-            <h3>Polina</h3>
-            <p>Frontend witch</p>
-            <a href="mailto:ponchitaz@yahoo.com" target="_blank">
+            <!--<a href="mailto:lera.leroi@gmail.com" target="_blank">
                 <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
-=======
-        <div id="github">
-            <a href="https://github.com/apeironuranium/Your-food---our-recipe" target="_blank">
-                <img src="{% static 'polls/github-desktop-icon.png' %}" width="100px" alt="GitHub"/>
->>>>>>> master
+            </a>-->
+            <a href="https://t.me/" target="_blank">
+                <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
+            </a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <h3>Полина</h3>
+            <p>Front-end<br/>друид</p>
+            <!--<a href="mailto:ponchitaz@yahoo.com" target="_blank">
+                <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+            </a>-->
+            <a href="https://t.me/ponchitaz" target="_blank">
+                <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
+            </a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <h3>Сева</h3>
+            <p>DevOps<br/>чернокнижник</p>
+            <!-- <a href="" target="_blank">
+                 <img src="{% static 'polls/mail-pic.png' %}" width="50px" alt="Mail"/>
+            </a>-->
+            <a href="https://t.me/aleister_atreides" target="_blank">
+                 <img src="{% static 'polls/telegram-pic.png' %}" width="50px" alt="Telegram"/>
             </a>
         </div>
     </div>
+    <div class="row-fluid">
+        <div class="col-xs-12" id="github">
+            <a href="https://github.com/apeironuranium/Your-food---our-recipe" target="_blank">
+                <img src="{% static 'polls/github-desktop-icon.png' %}" width="100px" alt="GitHub"/>
+            </a>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <a href="{% url 'polls:polls_index' %}">
+            <div class="col-xs-12">
+                <em><strong>На главную</strong></em>
+            </div>
+        </a>
+    </div>
 </div>
-<a href="{% url 'polls:polls_index' %}"><div class="line"><em><strong>На главную</strong></em></div></a>
-
 {% endblock %}
