@@ -4,21 +4,25 @@
 
 {% block content %}
 {% load static %}
-    <div class="line">
-        <h1>Что у Вас есть?</h1>
+<div class="container-fluid">
+    <div clas="row-fluid">
+        <div class="col-xs-12">
+            <h1>Что у Вас есть?</h1>
+        </div>
     </div>
-    <div id="content">
-        <div id="header">
+    <div class="row-fluid" id="content">
+        <div class="col-xs-12" id="header">
             Выберите из списка продукты, <br/>которые Вы хотите приготовить:
         </div>
-        <div>
-        <form action="{% url 'polls:your_recipe' %}" method='get'>
-          {% csrf_token %}
-          {{ product_form.as_p }}
-          <input type="submit" value="Submit" />
-        </form>
+        <div class="col-xs-12">
+            <form action="{% url 'polls:your_recipe' %}" method='get'>
+              {% csrf_token %}
+              {{ product_form.as_p }}
+              <input type="submit" value="Найти" />
+            </form>
         </div>
     </div>
+</div>
 
     <!-- Пока что активна просто ссылка на др. стр. для удобства ее верстки -->
 

@@ -4,26 +4,36 @@
 
 {% block content %}
 {% load static %}
-<div class="line">
-    <h1>Ваше будущее блюдо</h1>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <h1>Ваше будущее блюдо</h1>
+        </div>
+    </div>
+    <div class="row-fluid" id="content">
+        <div class="col-xs-12" id="header">
+                {{ object.title }}
+        </div>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-2 col-md-6 col-md-offset-4 recipe-description">
+                <h4>Ингридиенты</h4>
+                <ul>
+                    {% for line in recipe_lines %}
+                    <li>{{ line.ingridient }} {{ line.quantity }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-2 col-md-6 col-md-offset-4 recipe-description">
+                <h4>Способ приготовления</h4>
+                    {{ object.recipe_text }}
+            </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <a href="{% url 'polls:input_product' %}"><div class="line"><em><strong>Новый поиск</strong></em></div></a>
+        </div>
+    </div>
 </div>
-<div id="content">
-    <div id="header">
-        {{ object.title }}
-    </div>
-    <div class="recipe-description">
-        <h4>Ингридиенты</h4>
-        <ul>
-        {% for line in recipe_lines %}
-            <li>{{ line.ingridient }} {{ line.quantity }}</li>
-        {% endfor %}
-        </ul>
-    </div>
-    <div class="recipe-description">
-        <h4>Способ приготовления</h4>
-        {{ object.recipe_text }}
-    </div>
-</div>
+
     <!--<div class="line"><em><strong>...</strong></em></div>-->
 
 {% endblock %}

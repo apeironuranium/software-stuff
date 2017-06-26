@@ -4,16 +4,24 @@
 
 {% block content %}
 {% load static %}
-    <div class="line">
-        <h1>Taste'O'Clock</h1>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <h1>Taste'O'Clock</h1>
+        </div>
     </div>
-    <div id="content">
-        <div id="header">
+    <div class="row-fluid"  id="content">
+        <div class="col-xs-12" id="header">
             Добро пожаловать в Taste'O'Clock!
         </div>
-        <div>
+        <div class="col-xs-12">
             Цель сайта:<br/>рассказать Вам о рецептах,<br/>которые Вы можете приготовить прямо сейчас<br/>из того, что есть под рукой
         </div>
     </div>
-    <a href="{% url 'polls:input_product' %}"><div class="line"><em><strong>Начать</strong></em></div></a>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <a href="{% url 'polls:input_product' %}"><div class="line"><em><strong>Начать</strong></em></div></a>
+        </div>
+    </div>
+</div>
 {% endblock %}
