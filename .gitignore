@@ -102,5 +102,4 @@ ENV/
 
 # database files
 *.sqlite3
-.idea/workspace.xml
-backendtrying/mysite/db.sqlite3
+.idea/
