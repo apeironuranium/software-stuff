@@ -1,7 +1,6 @@
 body {
     background-color: #1A012F;
     background: linear-gradient(to top, #1A012F, #3F046F);
-    color: ghostwhite;
     font-family: sans-serif;
     text-align: center;
     padding: 15px;
@@ -39,6 +38,9 @@ h1 {
 h3 {
     margin: 5px;
 }
+.result-list {
+    color: ghostwhite;
+}
 .line {
     padding: 5px;
     text-align: center;
@@ -52,6 +54,7 @@ h3 {
     overflow: auto;
     position: relative;
     clear: left;
+    color: ghostwhite;
 }
 #header {
     padding: 10px;
@@ -72,4 +75,10 @@ p {
 }
 .navbar-fixed-bottom {
 
+}
+.selection {
+    color: black;
+}
+.select2-dropdown {
+    color: black!;
 }

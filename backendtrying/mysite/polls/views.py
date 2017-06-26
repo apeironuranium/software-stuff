@@ -1,9 +1,7 @@
 from django.views import generic
 from django.shortcuts import render
-from django.http import HttpResponse
 from . import models
-from . import forms
-# Create your views here.
+from .forms import FoodModelSelect2TagWidgetForm
 
 
 class IndexView(generic.TemplateView):
@@ -14,31 +12,33 @@ class CreditsView(generic.TemplateView):
     template_name = "polls/credits.html"
 
 
-class InputProductView(generic.TemplateView):
+class InputProductView(generic.FormView):
     template_name = "polls/input_product.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(InputProductView, self).get_context_data(**kwargs)
-        form = forms.ProductSelectionForm()
-        context['product_form'] = form
-        return context
+    form_class = FoodModelSelect2TagWidgetForm
 
 
 class YourRecipeView(generic.TemplateView):
     template_name = "polls/your_recipe.html"
 
     def get(self, request, *args):
-        food_ids = [int(x) for x in request.GET.getlist('food_list')]
+        food_list = request.GET.getlist('food_text')
+        food_ids = []
+        for item in food_list:
+            try:
+                food_ids.append(int(item))
+            except ValueError:
+                pass
         res = models.Recipe.objects.filter(recipe_lines__in=food_ids).distinct()
-        vals = []
-        food_ids = set(food_ids)
-        for item in res.all():
-            food_set = set()
-            for i in item.recipe_lines.values('id'):
-                food_set.add(i['id'])
-            if food_ids.issuperset(food_set):
-                vals.append(item)
-        return render(request, self.template_name, {'food_ids': vals})
+        # Old algorithm for strict search
+        # vals = []
+        # food_ids = set(food_ids)
+        # for item in res.all():
+        #     food_set = set()
+        #     for i in item.recipe_lines.values('id'):
+        #         food_set.add(i['id'])
+        #     if food_ids.issuperset(food_set):
+        #         vals.append(item)
+        return render(request, self.template_name, {'food_ids': res.all()})
 
 
 class RecipeDetailView(generic.DetailView):

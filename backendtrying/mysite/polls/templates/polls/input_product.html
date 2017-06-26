@@ -5,6 +5,7 @@
 {% block content %}
 {% load static %}
 <div class="container-fluid">
+    {{ form.media.css }}
     <div clas="row-fluid">
         <div class="col-xs-12">
             <h1>Что у Вас есть?</h1>
@@ -15,37 +16,24 @@
             Выберите из списка продукты, <br/>которые Вы хотите приготовить:
         </div>
         <div class="col-xs-12">
-            <form action="{% url 'polls:your_recipe' %}" method='get'>
+        <style type="text/css">
+          select {
+            width: 80%;
+          }
+        </style>
+            <form method="get" action="{% url 'polls:your_recipe' %}">
               {% csrf_token %}
-              {{ product_form.as_p }}
-              <input type="submit" value="Найти" />
+              {{ form }}</br>
+              <input type="submit" value="Submit Form"/>
             </form>
         </div>
     </div>
 </div>
-
-    <!-- Пока что активна просто ссылка на др. стр. для удобства ее верстки -->
-
-    <!--<a href="{% url 'polls:your_recipe' %}">
-        <div class="line"><em><strong>...</strong></em></div>-->
-    <!--</a>-->
-
-    <!-- <div class="line">
-        <input type="submit"
-               value="Let's cook"
-               form="products"
-               formaction=""
-               formmethod="get | post"
-               formtarget="{% url 'polls:your_recipe' %} _self"/>
-
-                <!-- formaction - ссылка на алгоритм работы с бд (отсыка к файлу по URL),
-                т.е. мы ввели продукты, на чем основывается SQL-запрос, типа:
-                "покажи рецепты, в которых есть вот эта шняга"
-
-                + formmethod - можно выбрать метод дтправки данных на сервер
-                (http://htmlbook.ru/html/input/formmethod)
-
-                + когда наприсуется красивая кнопка, ее можно будет тут прописать:
-                type="image" src="URL"
-                -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+  window.onerror = function (msg) {
+    $("body").attr("JSError", msg);
+  }
+</script>
+{{ form.media.js }}
 {% endblock %}

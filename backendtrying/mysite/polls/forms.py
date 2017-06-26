@@ -1,16 +1,21 @@
 from django import forms
+from django_select2.forms import ModelSelect2TagWidget
 from . import models
 
 
-class ProductSelectionForm(forms.ModelForm):
+class FoodSelect2TagWidget(ModelSelect2TagWidget):
+    search_fields = ['food_text__icontains']
+    model = models.Food
+    label = ''
+
+
+class FoodModelSelect2TagWidgetForm(forms.ModelForm):
     class Meta:
         model = models.Food
-        fields = []
-
-    def __init__(self, *args, **kwargs):
-        super(ProductSelectionForm, self).__init__(*args, **kwargs)
-
-        self.fields['food_list'] = forms.ModelMultipleChoiceField(
-            widget=forms.SelectMultiple,
-            queryset=models.Food.objects.all(),
-        )
+        fields = ['food_text']
+        widgets = {
+            'food_text': FoodSelect2TagWidget,
+        }
+        labels = {
+            'food_text': '',
+        }
