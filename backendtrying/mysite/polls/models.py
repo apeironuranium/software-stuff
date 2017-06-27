@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 
 class Recipe(models.Model):  # модели в базе данных
@@ -34,3 +35,8 @@ class RecipeLine(models.Model):
     recipe = models.ForeignKey(Recipe)
     ingridient = models.ForeignKey(Food)
     quantity = models.FloatField(default=0)
+
+    def clean(self):
+        if self.quantity <= 0:
+            raise ValidationError("Minimum no. of ingridients should be less or equal than maximum")
+        return super(quantity, self).clean()
